@@ -16,19 +16,34 @@ print(volume(7, 3))
 #y = len(x)
 
 #i = 0
+# import variable directly
+from math import pi
 
-def bin2dec(bin):
-    sum = 0
-    for index, bit in enumerate(bin[::-1]):
-        sum += int (bit) * (2 ** index)
-        return sum
-print(bin2dec(1001))
 
-#def bin2dec(x):
- #   while i < y:
-  #      i = i + 1
-   # while p < y:
-    #    s = (p * x[i] , p - 1 * x[i + 1])
-     #   return print(s)
+def volume2(h, r):
+    return pi * r ** 2 * h
+
+# can do from math import *, but don't do that
+
+print(volume(5, 5))
+print(volume2(5, 5))
+
+def bin2dec(str):
+    num = 0
+    for i, dig in enumerate(reversed([int(x) for x in list(str)])):
+        num = num + ((2 ** i) * dig)
+    return num
+
+print(bin2dec('1001'))
+print(bin2dec('10'))
+
+# make list of tuples where first number is even & second number is the square
+evens = [(x, x ** 2, y, y ** 3, x * y) for x in range(20) for y in range(3, 12, 3) if x % 2 == 0]
+
+print(evens)
+
+
+
+
 
 
